@@ -103,6 +103,42 @@ console.log("El texto introducido " + definirPalindromo + " es un palíndromo");
 
 
 
+function calcular (opcion, num1, num2) { //el orden de los parámetros es importante
+	var respuesta = 0;
+	switch (opcion) {
+		case 1 : 
+			respuesta = num1 + num2;
+			break;
+		case 2 :
+			respuesta  = num1 - num2;
+			break;
+		case 3 :
+			respuesta = num1 / num2;
+			break;
+		case 4 :
+			respuesta = num1 * num2;
+			break;
+		default : 
+		alert ("Revisa la opcion elegida");
+		break;
+	}
+	return respuesta;
+	//o en lugar de return */alert("el resultado es " + respuesta);
+}
+
+var opcion = prompt ("Elige una opción: \n 1 suma \n 2 resta \n 3 división \n 4 multiplicación");
+opcion = Number(opcion);
+num1 = prompt("Escribe primer numero");
+num1= Number(num1);
+num2 = prompt("Escribe segundo numero");
+num2= Number(num2);
+calcular(opcion, num1, num2);
+
+
+------------
+
+
+
 
 function sumar {}
 function restar {}
@@ -160,12 +196,6 @@ console.log(sacarCuadrado);
 
 //Realizar un programa que por medio de una función nos indique si el número que el usuario ingresa es primo o no
 
-
-
-
-
-
-
 function revisarPrimo(a) {
 	var a prompt ("Introduzca el número");
 	a = Number(a);
@@ -178,6 +208,22 @@ function revisarPrimo(a) {
 	return no;}
 }
 
+
+function saberPrimo (numero) {
+	if (numero === 2 || numero === 3 || numero === 5 || numero === 7) {
+		alert ("Es primo");
+	} else if (numero % 2 === 0 || numero % 3 === 0 || numero % 5 === 0 || numero % 7 === 0) {
+		alert ("No es primo");
+	} else {
+		alert ("Si es primo");
+	}
+}
+var numero = prompt ("Ingrese el número");
+numero = Number(numero);
+saberPrimo (numero); //es necesario indicar numero para que tome el número del prompt
+
+
+saberPrimo (10);
 
 -----------------------------------
 //Ejercicio #9: Múltiplos de un numero

@@ -67,7 +67,6 @@ for (var i = -1; nomb != "0"; i++ ) {
 	var nomb = prompt("Ingrese el nombre");
 	if (nomb !="0") {
 		nombres.push(nomb);
-		i++;
 	}
 }
 alert("Los nombres son: " + i + ": " + nombres);
