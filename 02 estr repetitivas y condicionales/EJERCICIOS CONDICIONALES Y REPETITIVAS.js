@@ -60,7 +60,7 @@ if (num1 > num2) {
 }
 
 
----------
+---------<<<
 //Ejercicio #4: Saldo bancario
 
 /*En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada cuenta corriente se conoce: número de cuenta, 
@@ -78,6 +78,23 @@ b) La suma total de los saldos acreedores.*/
 //Numero de cuenta
 //Nombre del cliente
 //Estado de cuenta. 
+
+do {
+		var numCuenta = prompt("Ingrese número de cuenta");
+		numCuenta = Number(numCuenta);
+	if (numCuenta > 0 ) {	
+		var cliente = prompt("Ingrese nombre");
+		var saldo = prompt("Ingrese saldo")
+		if (saldo > 0) {
+			var estado = "Acreedor";
+		} else if (saldo < 0) {
+			estado = "Deudor";
+		} else if (saldo === 0) {
+			estado = "Nulo"
+		}
+		console.log ("Número de cuenta " + numCuenta + cliente + " su saldo es $" + saldo + ", " + estado )
+	}
+} while (numCuenta > 0);
 
 
 
@@ -209,7 +226,7 @@ while (palabra != "salir") {
 }
 
 
---------------------- REVISARR
+--------------------- <<<
 //Ejercicio #10: Censo provincial
 /*
 Se realizó un censo provincial y se desea procesar la información obtenida en dicho censo. 
@@ -221,31 +238,30 @@ c)Cantidad de mujeres.
 d)Cantidad de varones cuya edad varía entre 16 y 65 años. */
 
 
-
-
-var i = 0 //total de personas
-var hm = 0 //hombres
-var mj = 0 //mujeres
-var hEntre16y65 = 0 //hombres entre 16 y 65 años
-var numDoc = 1;
-while(numDoc > 0) {
+var i = 0; //total de personas
+var hm = 0; //hombres
+var mj = 0; //mujeres
+var hEntre16y65 = 0; //hombres entre 16 y 65 años
+do  {
 	var numDoc = prompt("Ingrese el número de documento. Para salir ingrese 0");
 	numDoc = Number(numDoc);
-	var edad = prompt("Ingrese edad");
-	edad = Number(edad);
-	var sex = prompt("Ingrese m si es mujer ó h si es hombre");
-	if (sex === "m")	{
-		mj = mj++;
-		i = i++;
-	} else {
-		var hm = hm++;
-		i++;
-		if (edad >= 16 && edad <= 65) {
-			hEntre16y65++;
+	if (numDoc !== 0) {
+		var edad = prompt("Ingrese edad");
+		edad = Number(edad);
+		var sex = prompt("Ingrese m si es mujer ó h si es hombre");
+		if (sex === "m")	{
+			mj++;
+			i++;
+		} else {
+			hm++;
+			i++;
+			if ((edad >= 16) && (edad <= 65)) {
+				hEntre16y65++;
+			}
 		}
 	}
-}
+} while(numDoc !== 0)
 console.log("Total de mujeres: " + mj);
 console.log("Total de hombres: " + hm);
-console.log("Hombres entre 16 y 65 años: " + hEntre16y65);
+console.log("Del total de hombres, " + hEntre16y65 + " tienen entre 16 y 65 años");
 console.log("Total de personas censadas: " + i);

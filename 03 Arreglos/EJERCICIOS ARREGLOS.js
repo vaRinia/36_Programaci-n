@@ -1,4 +1,4 @@
-﻿------------------------------<<<
+------------------------------<<<
 //Ejercicio #1: Calculando DNI
 /*El cálculo de la letra del Documento Nacional de Identidad (DNI) es un proceso matemático sencillo que se basa en 
 obtener el residuo de la división entera del número de DNI entre el número 23.
@@ -35,7 +35,7 @@ var letraDni = prompt("Indique la letra asignada ", "MAYÚSCULA");
 if ((numeroDni < 0) || (numeroDni > 99999999)) { 
 	alert("el número proporcionado no es válido");
 	} else {
-		var dividido = numeroDni / 23;
+		var dividido = numeroDni % 23;
 		if (letraDni == letras[dividido]){
 			alert("El número y la letra DNI son correctos");
 		} else {

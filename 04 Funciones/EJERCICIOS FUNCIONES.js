@@ -1,15 +1,15 @@
-﻿-------------------------------
+-------------------------------<<<<
 //Ejercicio #1: El menor de los numeros
 //Elaborar una función a la cual le enviemos tres enteros y muestre el menor.
 
 
-function mostrarMenor (a,b,c) {
-/*var a = prompt("Ingrese primer número");
+function mostrarMenor () {
+var a = prompt("Ingrese primer número");
 a = Number(a);
 var b = prompt("Ingrese segundo número");
 b= Number(b);
 var c = prompt("Ingrese tercer número");
-c = Number(c); */
+c = Number(c);
 if (a < b) {
 	if (a < c) {
 	return a;
@@ -23,12 +23,10 @@ if (a < b) {
 	return c;
 	}
 }
+}
+console.log("El número menor es " + mostrarMenor());
 
-console.log("El número menor es " + mostrarMenor(a,b,c);
-
-
-
---------------------------
+--------------------------<<<<
 //Ejercicio #2: Numero par o impar
 /*Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve como resultado una cadena de texto 
 que indica si el número es par o impar. 
@@ -36,32 +34,40 @@ que indica si el número es par o impar.
 Mostrar por pantalla el resultado devuelto por la función.*/
 
 
-function decirPar (n) {
-	if ((n % 2) === 0) {
-	return "par";
-} else {
-	return "impar";	
+function decirPar(a) {
+	if ((a % 2) === 0) {
+	return a + " es par";
+	} else {
+		return a + " es impar";
+	}
 }
-
-console.log(decirPar(n))
-
-
+decirPar(8);
+//¿Por qué no puedo llamar varias veces a la función y que aparezca cada resultado?
 
 
-
-
--------------------------------------
+-------------------------------------<<<<
 //Ejercicio #3: Ordenando numeros.
 //Realizar una función a la cual le envíe tres enteros y los muestre ordenados de menor a mayor.
 
-function() {
-	
+function ordenar() {
+	var arreglo = [];
+	for(i = 0; i < 3; i++) {
+		var num = prompt("Introduce número");	
+		num = Number(num);
+		arreglo.push(num);
+	}
+	console.log("Introdujiste estos números " + arreglo)
+	arreglo.sort(function(a, b) {
+		return a - b;
+	});
+	console.log("Ordenados se ven así: " + arreglo);
 }
+ordenar();
 
 
 
 ------------------------------
-//Ejercicio #4: Mayusculas o minusculas
+//Ejercicio #4: Mayúsculas o minúsculas
 //Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento. 
 //A partir de la cadena que se le pasa, la función determina si esa cadena está formada sólo por mayúsculas, sólo por minúsculas o por una mezcla de ambas.
 
@@ -72,7 +78,7 @@ function() {
 
 
 
-----------------------------------------
+----------------------------------------<<<
 //Ejercicio #5: Palindromo
 /*Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo, 
 es decir, si se lee de la misma forma desde la izquierda y desde la derecha.
@@ -80,18 +86,19 @@ es decir, si se lee de la misma forma desde la izquierda y desde la derecha.
 Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".*/
 
 
-function definirPalindromo (texto) {
-	var texto = prompt ("Introduzca el texto deseado");
-	//Quitar todos los espacios
-	//Comparar posición cero con ultima posicion
-	return si
-	return no
+function isPalindromo (palabra) {
+	var frase = palabra.replace (/\s/g, "");
+	frase = frase.toLowerCase();
+	for (var i = 0; i < frase.length; i++) {
+		var x = frase[i];
+		var y = frase[frase.length - (i + 1)];
+		if (x !== y) {
+			return "La regaste, no es un palíndromo";
+		}
+	} return "Perfect, es un palíndromo";
 }
 
-console.log("El texto introducido " + definirPalindromo + " es un palíndromo");
-
-
-
+isPalindromo ("anitA LAVA LA tina");
 
 
 
@@ -126,7 +133,7 @@ function calcular (opcion, num1, num2) { //el orden de los parámetros es import
 	//o en lugar de return */alert("el resultado es " + respuesta);
 }
 
-var opcion = prompt ("Elige una opción: \n 1 suma \n 2 resta \n 3 división \n 4 multiplicación");
+var opcion = prompt ("Elige el número de la opción: \n 1 suma \n 2 resta \n 3 división \n 4 multiplicación");
 opcion = Number(opcion);
 num1 = prompt("Escribe primer numero");
 num1= Number(num1);
@@ -191,48 +198,50 @@ console.log(sacarCuadrado);
 
 
 
-------------------
+------------------<<<<<
 //Ejercicio #8: Numero primo
 
 //Realizar un programa que por medio de una función nos indique si el número que el usuario ingresa es primo o no
 
-function revisarPrimo(a) {
-	var a prompt ("Introduzca el número");
+/*function revisarPrimo(a) {
+	var a = prompt ("Introduzca el número");
 	a = Number(a);
 	for (i = 2; a % i != 0; i++) {
 	var divisor = i;
 	}
 	if (divisor === a) {
-	return si;
+	console.log("Si es primo")
 	} else {
-	return no;}
+	console.log("No es primo")}
 }
-
+saberPrimo (10);*/
 
 function saberPrimo (numero) {
+	numero = prompt("Introduce el número");
+	numero = Number(numero);
 	if (numero === 2 || numero === 3 || numero === 5 || numero === 7) {
-		alert ("Es primo");
+		console.log(numero + " si es primo");
 	} else if (numero % 2 === 0 || numero % 3 === 0 || numero % 5 === 0 || numero % 7 === 0) {
-		alert ("No es primo");
+		console.log(numero + " no es primo");
 	} else {
-		alert ("Si es primo");
+		console.log(numero + " si es primo");
 	}
 }
-var numero = prompt ("Ingrese el número");
-numero = Number(numero);
-saberPrimo (numero); //es necesario indicar numero para que tome el número del prompt
-
-
-saberPrimo (10);
-
------------------------------------
+saberPrimo ();
+-----------------------------------<<<<<<<<<
 //Ejercicio #9: Múltiplos de un numero
 
 //Programa que calcula los 10 primeros múltiplos del número que queramos, utilizando una función que retorna parámetro.
 
 
 function() {
-	
+	var numero = prompt("Escribe el número");
+	numero = Number(numero);
+	console.log("Los múltiplos son: \n")
+	for (i = 1; i <=10; i++){
+		var multiplo = numero * i;
+		console.log ("multiplo")
+	};
 }
 
 
@@ -246,5 +255,5 @@ function() {
 function leerDigitos (numero) {
 	numero.lenght
 }
-
+leerDigitos(1987);
 
